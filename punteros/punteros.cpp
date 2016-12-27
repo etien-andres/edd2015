@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main()
@@ -7,15 +8,15 @@ int main()
 	int tamano;
 	int *arreglo;
 	int contador;
-
+	srand(time(NULL));
 	cout << "Tamaño del arreglo: ";
-	cin >> tamano;
-
+	tamano=rand()%10+1;
+	cout<<tamano<<endl;
 	// Reserva el tamaño en bytes
 	arreglo = new int[tamano];
 
 	for (contador = 0; contador < tamano; contador++) {
-		arreglo[contador] = contador + 1;
+		arreglo[contador] = rand()%100+11 ;
 	}
 
 	cout << "El arreglo es: ";
